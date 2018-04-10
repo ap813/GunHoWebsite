@@ -33,7 +33,7 @@
 .submitForm {
     left:33%;
     right:33%;
-    top: 28%;
+    top: 20%;
     opacity: 0.75;
     height: 70%;
     background-color: white;
@@ -61,7 +61,7 @@
     top: 34%;
     text-align: center;
     opacity: 0.75;
-    height: 32%;
+    height: 39%;
     background-color: white;
     color: black;
     padding: 20px;
