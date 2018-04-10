@@ -23,7 +23,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Leaderboard from './components/Leaderboard'
 import SignUpForm from './components/SignUpForm'
 import LoginForm from './components/LoginForm'
-import Navigation from './components/Navigation'
 
 class Page extends Component {
 
