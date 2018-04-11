@@ -15,11 +15,11 @@ export default class Leaderboard extends Component {
   }
 
   left() {
-
+    //
   }
 
   right() {
-
+    //
   }
 
   render() {

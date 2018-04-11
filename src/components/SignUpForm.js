@@ -15,6 +15,7 @@ export default class SignUpForm extends Component {
     super()
 
     this.request = this.request.bind(this)
+    this.warning = this.warning.bind(this)
   }
 
   request() {

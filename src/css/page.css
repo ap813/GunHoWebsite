@@ -1,21 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Asap');
 @import url('https://fonts.googleapis.com/css?family=Bellefair');
 
-.page{
-    height: 18%;
-    width: 100%;
-    text-align: center;
-    background-color: black;
-    color: white;
-    font-size: 50px;
-    font-family: 'Asap', sans-serif;
-    letter-spacing: 2px;
-    font-weight: 600;
-    top: 0%;
-    margin: 0 !important;
-    padding: 10px;
-}
-
 .paragraph {
     opacity: 0.9;
     height: 100%;
@@ -34,7 +19,6 @@
     right:33%;
     top: 16%;
     opacity: 0.9;
-    height: 78%;
     background-color: white;
     color: black;
     padding: 20px;
@@ -49,7 +33,6 @@
     right:25%;
     top: 20%;
     opacity: 0.9;
-    height: 70%;
     text-align: center;
     background-color: white;
     color: black;
@@ -71,7 +54,6 @@
     top: 34%;
     text-align: center;
     opacity: 0.9;
-    height: 39%;
     background-color: white;
     color: black;
     padding: 20px;
