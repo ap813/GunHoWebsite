@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import '../css/page.css'
 import {
+  Button,
   Form,
   FormGroup,
   Label,
@@ -11,11 +13,21 @@ export default class SignUpForm extends Component {
 
   constructor(props) {
     super()
+
+    this.request = this.request.bind(this)
+  }
+
+  request() {
+    // requests that a user be made in the database
+  }
+
+  warning() {
+    // tells user that some account info is not valid
   }
 
   render() {
     return(
-      <p class="submitForm">
+      <div class="submitForm">
         <Form>
           <FormGroup>
             <Label for="firstName">First Name</Label>
@@ -37,7 +49,12 @@ export default class SignUpForm extends Component {
             <Input type="email" name="email" id="exampleEmail" placeholder="Blackbeard@gmail.com" />
           </FormGroup>
         </Form>
-      </p>
+
+        <p className="middle">
+        <Button onClick={this.request} size="lg">Submit</Button>
+        </p>
+
+      </div>
     )
   }
 

@@ -12,6 +12,8 @@ export default class LoginForm extends Component {
 
     constructor(props) {
       super()
+
+      this.submit = this.submit.bind(this)
     }
 
     submit() {
@@ -33,7 +35,7 @@ export default class LoginForm extends Component {
             </FormGroup>
           </Form>
 
-          <Button onClick={this.submit} color="secondary">Submit</Button>
+          <Button onClick={this.submit} size="lg">Submit</Button>
 
         </p>
       )

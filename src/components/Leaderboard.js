@@ -1,16 +1,30 @@
 import React, { Component } from 'react'
-import { Table } from 'reactstrap';
+import '../css/page.css'
+import {
+    Button,
+    Table } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class Leaderboard extends Component {
 
   constructor(props) {
     super()
+
+    this.left = this.left.bind(this)
+    this.right = this.right.bind(this)
+  }
+
+  left() {
+
+  }
+
+  right() {
+
   }
 
   render() {
     return(
-      <p className="leaderboard">
+      <div className="leaderboard">
           <Table hover>
             <thead>
               <tr>
@@ -32,7 +46,12 @@ export default class Leaderboard extends Component {
               </tr>
             </tbody>
           </Table>
-        </p>
+
+          <Button onClick={this.left}>Back</Button>
+          {' '}
+          <Button onClick={this.right}>Next</Button>
+
+        </div>
     )
   }
 }
