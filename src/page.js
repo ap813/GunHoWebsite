@@ -137,7 +137,7 @@ class Page extends Component {
 
         <Leaderboard />
 
-      </div>
+      </div> 
     )
   }
 
