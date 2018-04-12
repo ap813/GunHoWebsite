@@ -113,9 +113,15 @@ export default class Leaders extends Component {
               </tbody>
             </Table>
 
-            <LeaderButtons type={true} action={this.left} counter={this.state.counter} />
+            <LeaderButtons type={true}
+                           board={this.props.boards.length}
+                           action={this.left}
+                           counter={this.state.counter} />
             {' '}
-            <LeaderButtons type={false} action={this.right} counter={this.state.counter}/>
+            <LeaderButtons type={false}
+                           board={this.props.boards.length}
+                           action={this.right}
+                           counter={this.state.counter}/>
             </p>
               </div>
             </div>

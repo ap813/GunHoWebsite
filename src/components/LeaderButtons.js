@@ -62,7 +62,7 @@ export default class LeaderButton extends Component {
         (this.renderNotVisibleBack()) :
         (this.props.type && this.props.counter>=10) ?
         (this.renderVisibleBack()) :
-        (!this.props.type && this.props.counter>=90) ?
+        (!this.props.type && (this.props.counter+10)>=(this.props.board - 10)) ?
         (this.renderNotVisibleNext()) :
         (this.renderVisibleNext())
       )
