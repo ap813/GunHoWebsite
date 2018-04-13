@@ -18,8 +18,17 @@ export default class SignUpForm extends Component {
     this.warning = this.warning.bind(this)
   }
 
-  request() {
-    // requests that a user be made in the database
+  // requests that a user be made in the database
+  request(firstName, lastName, username, password, confirmPass, email) {
+
+    //document.getElementById("frm").submit()
+
+    // Test for passing of parameters
+    console.log(firstName + ' ' +
+                lastName + ' ' +
+                password + ' ' +
+                confirmPass + ' ' +
+                email);
   }
 
   warning() {
@@ -27,34 +36,37 @@ export default class SignUpForm extends Component {
   }
 
   render() {
+
     return(
-      <div class="submitForm">
-        <Form>
-          <FormGroup>
-            <Label for="firstName">First Name</Label>
-            <Input type="firstname" name="firstname" id="firstName" placeholder="Richard" />
-            <br />
-            <Label for="lastName">Last Name</Label>
-            <Input type="lastname" name="lastname" id="lastName" placeholder="Leinecker" />
-            <br />
-            <Label for="username">Username</Label>
-            <Input type="username" name="username" id="exampleUser" placeholder="E.g. Blackbeard" />
-            <br />
-            <Label for="password">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="* * * * * * *" />
-            <br />
-            <Label for="confirmPass">Confirm Password</Label>
-            <Input type="password" name="confirmPass" id="confirmPass" placeholder="* * * * * * *" />
-            <br />
-            <Label for="email">Email</Label>
-            <Input type="email" name="email" id="exampleEmail" placeholder="Blackbeard@gmail.com" />
-          </FormGroup>
-        </Form>
-
-        <p className="middle">
-        <Button onClick={this.request} size="lg">Submit</Button>
-        </p>
-
+      <div className="outer">
+        <div class="submitForm">
+          <Form onSubmit={this.request()}>
+            <h3 className="middle">Create an Account</h3>
+            <FormGroup>
+              <Label for="firstName">First Name</Label>
+              <Input type="text" name="firstname" id="firstName" placeholder="Richard" />
+              <br />
+              <Label for="lastName">Last Name</Label>
+              <Input type="text" name="lastname" id="lastName" placeholder="Leinecker" />
+              <br />
+              <Label for="username">Username</Label>
+              <Input type="text" name="username" id="exampleUser" placeholder="E.g. Blackbeard" />
+              <br />
+              <Label for="password">Password</Label>
+              <Input type="password" name="password" id="examplePassword" placeholder="* * * * * * *" />
+              <br />
+              <Label for="confirmPass">Confirm Password</Label>
+              <Input type="password" name="confirmPass" id="confirmPass" placeholder="* * * * * * *" />
+              <br />
+              <Label for="email">Email</Label>
+              <Input type="email" name="email" id="exampleEmail" placeholder="Blackbeard@gmail.com" />
+              <br />
+              <p className="middle">
+              <Button value="Submit" size="lg">Submit</Button>
+              </p>
+            </FormGroup>
+          </Form>
+        </div>
       </div>
     )
   }

@@ -48,8 +48,6 @@ export default class Leaders extends Component {
     render() {
       return(
         <div className="outer">
-          <div className="middle">
-            <div className="inner">
             <p className="leaderboard">
             <Table hover>
               <thead>
@@ -113,18 +111,18 @@ export default class Leaders extends Component {
               </tbody>
             </Table>
 
-            <LeaderButtons type={true}
-                           board={this.props.boards.length}
-                           action={this.left}
-                           counter={this.state.counter} />
-            {' '}
-            <LeaderButtons type={false}
-                           board={this.props.boards.length}
-                           action={this.right}
-                           counter={this.state.counter}/>
-            </p>
-              </div>
+            <div className="buttonPad">
+              <LeaderButtons type={true}
+                             board={this.props.boards.length}
+                             action={this.left}
+                             counter={this.state.counter} />
+              {' '}
+              <LeaderButtons type={false}
+                             board={this.props.boards.length}
+                             action={this.right}
+                             counter={this.state.counter}/>
             </div>
+            </p>
           </div>
         )
     }

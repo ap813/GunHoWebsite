@@ -22,22 +22,24 @@ export default class LoginForm extends Component {
 
     render() {
       return(
-        <p className="login">
-          <Form>
-            <FormGroup>
-            <br />
-            <Label for="username">Username</Label>
-            <Input type="username" name="username" id="exampleUser" placeholder="" />
-            <br />
-            <Label for="password">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="" />
-            <br />
-            </FormGroup>
-          </Form>
+        <div className="outerLogin">
+          <p className="login">
+            <Form>
+              <h3 className="middle">Login</h3>
+              <FormGroup>
+              <br />
+              <Label for="username">Username</Label>
+              <Input type="username" name="username" id="exampleUser" placeholder="" />
+              <br />
+              <Label for="password">Password</Label>
+              <Input type="password" name="password" id="examplePassword" placeholder="" />
+              <br />
+              </FormGroup>
+            </Form>
 
-          <Button onClick={this.submit} size="lg">Submit</Button>
-
-        </p>
+            <Button onClick={this.submit} size="lg">Submit</Button>
+          </p>
+        </div>
       )
     }
 }

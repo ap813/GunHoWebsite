@@ -51,12 +51,12 @@ export default class LeaderButton extends Component {
       )
     }
 
+    // 4 types
+    // 1) Back Button not visible
+    // 2) Back Button visible
+    // 3) Next Button not visible
+    // 4) Next Button visible
     render() {
-      // 4 types
-      // 1) Back Button not visible
-      // 2) Back Button visible
-      // 3) Next Button not visible
-      // 4) Next Button visible
       return(
         (this.props.type && this.props.counter<10) ?
         (this.renderNotVisibleBack()) :

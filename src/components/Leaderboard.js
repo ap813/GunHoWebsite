@@ -5,61 +5,52 @@ import {
     Table } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import Leaders from './Leaders'
+import {$,jQuery} from 'jquery';
 
 export default class Leaderboard extends Component {
 
   constructor(props) {
-    super()
+    super(props)
 
     this.state = {
       board:[
-        { ranking: 1, user: "Davy Jones", score: 500 }
+        { ranking: 1, user: "Blackbeard", score: 999}
       ]
     }
+
+    this.add = this.add.bind(this)
   }
 
   componentWillMount() {
 
-    // var data, success
-    // Load in all of the leaderboard database 1 - 100
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://64.37.54.24/getAllScores.php", false);
+    //xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    // Pull stuff from database (this is JSON Blob)
-    // $.ajax({
-    //   dataType: "json",
-    //   url: "http://64.37.54.24/getAllScores.php",
-    //   data: data,
-    //   success: success
-    // });
+    xhr.send();
 
-    // Update state array (JSON.stringify)
-    this.setState({
+    var jsonObject = JSON.parse( xhr.responseText );
+
+    for(var i = 1; i <= jsonObject.length; i++)
+    {
+        var scr = jsonObject[i-1].score
+        var usr = jsonObject[i-1].username
+
+        this.add(i,usr,scr)
+    }
+  }
+
+  add(i, usr, scr) {
+    this.setState(prevState => ({
       board: [
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
-        { user: "Davy Jones", score: 500 },
-        { user: "Blackbeard", score: 1 },
+        ...prevState.board,
+        {
+          ranking: i,
+          user: usr,
+          score: scr
+        }
       ]
-    })
+    }))
   }
 
   render() {

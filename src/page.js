@@ -23,6 +23,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Leaderboard from './components/Leaderboard'
 import SignUpForm from './components/SignUpForm'
 import LoginForm from './components/LoginForm'
+import Info from './components/Info'
 
 class Page extends Component {
 
@@ -112,7 +113,6 @@ class Page extends Component {
         </Navbar>
 
         <SignUpForm />
-
       </div>
     )
   }
@@ -136,8 +136,7 @@ class Page extends Component {
         </Navbar>
 
         <Leaderboard />
-
-      </div> 
+      </div>
     )
   }
 
@@ -202,6 +201,8 @@ class Page extends Component {
               </NavItem>
             </Nav>
         </Navbar>
+
+        <Info />
       </div>
     )
   }
