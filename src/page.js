@@ -34,7 +34,8 @@ class Page extends Component {
       Leaderboard : false,
       Profile : false,
       Signup : false,
-      Login : false
+      Login : false,
+      username: '',
     }
 
     this.leader = this.leader.bind(this)
@@ -52,7 +53,6 @@ class Page extends Component {
   leader() {
     this.setState ({
       Leaderboard : true,
-      Profile : false,
       Signup : false,
       Login : false
     })
@@ -70,7 +70,6 @@ class Page extends Component {
   signup() {
     this.setState({
       Leaderboard : false,
-      Profile : false,
       Signup : true,
       Login : false
     })
@@ -79,7 +78,6 @@ class Page extends Component {
   login() {
     this.setState({
       Leaderboard : false,
-      Profile : false,
       Signup : false,
       Login : true
     })
@@ -88,7 +86,6 @@ class Page extends Component {
   info() {
     this.setState({
       Leaderboard : false,
-      Profile : false,
       Signup : false,
       Login : false
     })

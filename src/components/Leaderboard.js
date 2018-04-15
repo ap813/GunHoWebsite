@@ -13,9 +13,7 @@ export default class Leaderboard extends Component {
     super(props)
 
     this.state = {
-      board:[
-        { ranking: 1, user: "Blackbeard", score: 999}
-      ]
+      board:[]
     }
 
     this.add = this.add.bind(this)
@@ -25,7 +23,6 @@ export default class Leaderboard extends Component {
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://64.37.54.24/getAllScores.php", false);
-    //xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     xhr.send();
 
