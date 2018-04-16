@@ -24,6 +24,7 @@ import Leaderboard from './components/Leaderboard'
 import SignUpForm from './components/SignUpForm'
 import LoginForm from './components/LoginForm'
 import Info from './components/Info'
+import Navigation from './components/Nav'
 
 class Page extends Component {
 
@@ -43,6 +44,7 @@ class Page extends Component {
     this.signup = this.signup.bind(this)
     this.info = this.info.bind(this)
     this.login = this.login.bind(this)
+    this.updateUsername = this.updateUsername.bind(this)
     this.renderInfo = this.renderInfo.bind(this)
     this.renderLeader = this.renderLeader.bind(this)
     this.renderLogin = this.renderLogin.bind(this)
@@ -91,23 +93,29 @@ class Page extends Component {
     })
   }
 
+  updateUsername(user) {
+    this.setState({
+      username: user
+    })
+  }
+
+  updateProfile() {
+    this.setState({
+      Profile: true
+    })
+  }
+
   renderSignup() {
     return (
       <div>
-        <Navbar color="white" light expand="md">
-          <NavbarBrand onClick={this.info}><h1>Gun Ho</h1></NavbarBrand>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink><Button onClick={this.leader} color="primary">Leaderboards</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.signup} color="info">Signup</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.login} color="success">Login</Button></NavLink>
-              </NavItem>
-            </Nav>
-        </Navbar>
+        <Navigation
+          info={this.info}
+          leader={this.leader}
+          signup={this.signup}
+          login={this.login}
+          profile={this.profile}
+          logged={this.state.Profile}
+        />
 
         <SignUpForm />
       </div>
@@ -117,20 +125,14 @@ class Page extends Component {
   renderLeader() {
     return (
       <div>
-        <Navbar color="white" light expand="md">
-          <NavbarBrand onClick={this.info}><h1>Gun Ho</h1></NavbarBrand>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink><Button onClick={this.leader} color="primary">Leaderboards</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.signup} color="info">Signup</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.login} color="success">Login</Button></NavLink>
-              </NavItem>
-            </Nav>
-        </Navbar>
+        <Navigation
+          info={this.info}
+          leader={this.leader}
+          signup={this.signup}
+          login={this.login}
+          profile={this.profile}
+          logged={this.state.Profile}
+        />
 
         <Leaderboard />
       </div>
@@ -140,43 +142,34 @@ class Page extends Component {
   renderProfile() {
     return(
       <div>
-        <Navbar color="white" light expand="md">
-          <NavbarBrand onClick={this.info}><h1>Gun Ho</h1></NavbarBrand>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink><Button onClick={this.leader} color="primary">Leaderboards</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.signup} color="info">Signup</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.login} color="success">Login</Button></NavLink>
-              </NavItem>
-            </Nav>
-        </Navbar>
+        <Navigation
+          info={this.info}
+          leader={this.leader}
+          signup={this.signup}
+          login={this.login}
+          profile={this.profile}
+          logged={this.state.Profile}
+        />
       </div>
     )
   }
 
   renderLogin() {
+
+    var user=''
+
     return(
       <div>
-        <Navbar color="white" light expand="md">
-          <NavbarBrand onClick={this.info}><h1>Gun Ho</h1></NavbarBrand>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink><Button onClick={this.leader} color="primary">Leaderboards</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.signup} color="info">Signup</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.login} color="success">Login</Button></NavLink>
-              </NavItem>
-            </Nav>
-        </Navbar>
+        <Navigation
+          info={this.info}
+          leader={this.leader}
+          signup={this.signup}
+          login={this.login}
+          profile={this.profile}
+          logged={this.state.Profile}
+        />
 
-        <LoginForm />
+        <LoginForm logged={this.updateProfile} />
       </div>
     )
   }
@@ -184,20 +177,14 @@ class Page extends Component {
   renderInfo() {
     return(
       <div>
-        <Navbar color="white" light expand="md">
-          <NavbarBrand onClick={this.info}><h1>Gun Ho</h1></NavbarBrand>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink><Button onClick={this.leader} color="primary">Leaderboards</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.signup} color="info">Signup</Button></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Button onClick={this.login} color="success">Login</Button></NavLink>
-              </NavItem>
-            </Nav>
-        </Navbar>
+        <Navigation
+          info={this.info}
+          leader={this.leader}
+          signup={this.signup}
+          login={this.login}
+          profile={this.profile}
+          logged={this.state.Profile}
+        />
 
         <Info />
       </div>

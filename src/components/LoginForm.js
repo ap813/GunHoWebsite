@@ -53,7 +53,9 @@ export default class LoginForm extends Component {
     			alert("Username or Password Incorrect")
     			return;
     		}
+
           alert("Login Successful")
+          return
       	}
       	catch(err)
       	{
