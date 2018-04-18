@@ -44,6 +44,7 @@ export default class SignUpForm extends Component {
 
     if(password !== confirmPass) {
       alert("Passwords do not match!")
+      event.preventDefault()
       return
     }
 

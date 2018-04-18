@@ -16,10 +16,6 @@ export default class Navigation extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      loggedin: this.props.logged
-    }
-
     this.renderNoLog = this.renderNoLog.bind(this)
     this.renderLog = this.renderLog.bind(this)
   }
@@ -44,20 +40,25 @@ export default class Navigation extends Component {
   }
 
   renderLog() {
-    <Navbar color="white" light expand="md">
-      <NavbarBrand onClick={this.props.info}><h1>Gun Ho</h1></NavbarBrand>
-        <Nav className="ml-auto" navbar>
-          <NavItem>
-            <NavLink><Button onClick={this.props.leader} color="primary">Leaderboards</Button></NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink><Button onClick={this.props.profile} color="info">Profile</Button></NavLink>
-          </NavItem>
-        </Nav>
-    </Navbar>
+    return(
+      <Navbar color="white" light expand="md">
+        <NavbarBrand onClick={this.props.info}><h1>Gun Ho</h1></NavbarBrand>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink><Button onClick={this.props.leader} color="primary">Leaderboards</Button></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Button onClick={this.props.profile} color="info">Profile</Button></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink><Button onClick={this.props.logout} color="success">Log Out</Button></NavLink>
+            </NavItem>
+          </Nav>
+      </Navbar>
+    )
   }
 
   render() {
-    return( this.state.loggedin ? this.renderLog() : this.renderNoLog())
+    return( this.props.logged ? this.renderLog() : this.renderNoLog())
   }
 }
