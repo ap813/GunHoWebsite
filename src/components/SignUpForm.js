@@ -56,8 +56,6 @@ export default class SignUpForm extends Component {
 
   		var jsonObject = JSON.parse( xhr.responseText );
 
-      console.log(jsonObject.error);
-
       if(jsonObject.error !== '') {
         alert("Username or Nickname already in use.")
         event.preventDefault()

@@ -71,7 +71,9 @@ export default class Info extends Component {
             iPad Pro: 12.9-inch, 10.5-inch, 9.7-inch
             <br />
             iPad (2017)
-
+            <br />
+            <br />
+            <Button onClick={this.splash}>Back</Button>
           </p>
         </div>
       </div>

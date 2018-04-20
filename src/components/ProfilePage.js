@@ -15,7 +15,7 @@ export default class ProfilePage extends Component {
 
   render() {
     return(
-      <div className="outer">
+      <div className="outerProfile">
         <div className="profile">
           <Container>
             <Row>

@@ -40,9 +40,23 @@ export default class DeleteFriends extends Component {
 
     try {
       xhr.send(jsonPayload)
+
+      var jsonObject = JSON.parse(xhr.responseText)
+
+      console.log(jsonObject.error);
+
+      if(jsonObject.error !== "") {
+        alert(friend + " wasn't found in your friends list.")
+        event.preventDefault()
+        return
+      }
+
+      alert(friend + " was removed from your friends list.")
+
       event.preventDefault();
     }
     catch(err) {
+      alert(friend + " wasn't found in your friends list.")
       event.preventDefault();
     }
   }
