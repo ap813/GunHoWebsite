@@ -3,7 +3,6 @@ import '../css/page.css'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import {
-  Button,
   Container,
   Row,
   Col
@@ -14,33 +13,28 @@ import DeleteFriends from './DeleteFriends'
 
 export default class ProfilePage extends Component {
 
-  constructor(props) {
-    super(props)
-
-  }
-
   render() {
     return(
       <div className="outer">
-        <div class="profile">
+        <div className="profile">
           <Container>
             <Row>
               <Col>
-                <p className="middle">
+                <div className="middle">
                   <h2>Friends List</h2>
                   <FriendsList user={this.props.user}/>
-                </p>
+                </div>
               </Col>
               <Col>
-                <p className="middle">
+                <div className="middle">
                   <h2>Add Friends</h2>
                   <AddFriends user={this.props.user}/>
-                </p>
+                </div>
                 <br />
-                <p className="middle">
+                <div className="middle">
                   <h2>Delete Friends</h2>
                   <DeleteFriends user={this.props.user}/>
-                </p>
+                </div>
               </Col>
             </Row>
           </Container>

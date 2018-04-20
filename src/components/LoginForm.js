@@ -7,9 +7,7 @@ import {
   Input,
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import Page from '../page.js'
 import LoggedPage from './LoggedPage.js'
-import Navigation from './Nav'
 import LoginNav from './LoginNav'
 
 export default class LoginForm extends Component {
@@ -91,11 +89,10 @@ export default class LoginForm extends Component {
               leader={this.props.leader}
               signup={this.props.signup}
               login={this.props.login}
-              profile={this.props.info}
               />
 
             <div className="outerLogin">
-              <p className="login">
+              <div className="login">
                 <Form onSubmit={this.submit}>
                   <h3 className="middle">Login</h3>
                   <FormGroup>
@@ -109,7 +106,7 @@ export default class LoginForm extends Component {
                   </FormGroup>
                   <Button type="submit" value="Submit">Submit</Button>
                 </Form>
-              </p>
+              </div>
             </div>
 
         </div>

@@ -37,11 +37,6 @@ export default class SignUpForm extends Component {
 	  var password = this.state.password
     var confirmPass = this.state.confirmPass
 
-    console.log(user);
-    console.log(nick);
-    console.log(password);
-    console.log(confirmPass);
-
     if(password !== confirmPass) {
       alert("Passwords do not match!")
       event.preventDefault()
@@ -50,7 +45,6 @@ export default class SignUpForm extends Component {
 
     // Username is already taken
     var jsonPayload = '{"username" : "' + user + '", "password" : "' + window.md5(password) + '", "nickname" : "' + nick + '"}';
-    console.log(jsonPayload);
   	var url = 'http://64.37.54.24/addUser.php';
 
   	var xhr = new XMLHttpRequest();
@@ -62,7 +56,13 @@ export default class SignUpForm extends Component {
 
   		var jsonObject = JSON.parse( xhr.responseText );
 
-                  console.log(jsonObject);
+      console.log(jsonObject.error);
+
+      if(jsonObject.error !== '') {
+        alert("Username or Nickname already in use.")
+        event.preventDefault()
+        return
+      }
 
   		alert("SignUp Successful")
       return

@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 import '../css/page.css'
 import {
   Button,
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,

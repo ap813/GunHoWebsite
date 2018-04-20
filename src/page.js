@@ -30,12 +30,6 @@ class Page extends Component {
     this.renderSignup = this.renderSignup.bind(this)
   }
 
-  componentDidMount(prevState) {
-    this.setState((prevState) => {
-      user: prevState.user
-    })
-  }
-
   leader() {
     this.setState ({
       Leaderboard : true,

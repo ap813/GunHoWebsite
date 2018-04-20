@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import '../css/page.css'
-import {
-    Button,
-    Table
-  } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import Leaders from './Leaders'
-import {$,jQuery} from 'jquery';
 
 export default class Leaderboard extends Component {
 
@@ -28,8 +23,6 @@ export default class Leaderboard extends Component {
     xhr.send();
 
     var jsonObject = JSON.parse( xhr.responseText );
-
-    console.log(jsonObject);
 
     for(var i = 1; i <= jsonObject.length; i++)
     {

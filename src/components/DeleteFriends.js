@@ -5,7 +5,6 @@ import {
   Button,
   Form,
   FormGroup,
-  Label,
   Input
 } from 'reactstrap'
 
@@ -41,12 +40,9 @@ export default class DeleteFriends extends Component {
 
     try {
       xhr.send(jsonPayload)
-
-      console.log("JSON Add Sent");
       event.preventDefault();
     }
     catch(err) {
-      console.log("Error: " + err);
       event.preventDefault();
     }
   }

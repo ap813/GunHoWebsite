@@ -2,12 +2,8 @@ import React, {Component} from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/page.css'
 import {
-  Button,
   Table
 } from 'reactstrap'
-import {$,jQuery} from 'jquery';
-
-
 
 export default class FriendsList extends Component {
   constructor(props) {

@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import '../css/page.css'
 import {
   Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
   Row,
   Col
 } from 'reactstrap';
