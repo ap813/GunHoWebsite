@@ -95,7 +95,7 @@ export default class SignUpForm extends Component {
 
     return(
       <div className="outer">
-        <div class="submitForm">
+        <div className="submitForm">
           <Form onSubmit={this.request}>
             <h3 className="middle">Create an Account</h3>
             <FormGroup>

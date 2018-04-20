@@ -53,7 +53,7 @@ export default class Leaders extends Component {
               <thead>
                 <tr>
                   <th>Ranking</th>
-                  <th>Username</th>
+                  <th>Nickname</th>
                   <th>High Score</th>
                 </tr>
               </thead>

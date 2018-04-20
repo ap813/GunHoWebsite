@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {
+  Button,
   Form,
   FormGroup,
   Label,
@@ -9,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Page from '../page.js'
 import LoggedPage from './LoggedPage.js'
 import Navigation from './Nav'
+import LoginNav from './LoginNav'
 
 export default class LoginForm extends Component {
 
@@ -31,10 +33,10 @@ export default class LoginForm extends Component {
     submit(event) {
       // Send info to DB and check if the account is valid
       var user = this.state.user
-      var password = this.state.password
+      var password = window.md5(this.state.password)
       var userId = 0
 
-      var jsonPayload = '{"username" : "' + user + '", "password" : "' + window.md5(password) + '"}';
+      var jsonPayload = '{"username" : "' + user + '", "password" : "' + password + '"}';
 	    var url = 'http://64.37.54.24/login.php';
 
       var xhr = new XMLHttpRequest();
@@ -81,23 +83,36 @@ export default class LoginForm extends Component {
 
       return(
 
-          <div className="outerLogin">
-            <p className="login">
-              <Form onSubmit={this.submit}>
-                <h3 className="middle">Login</h3>
-                <FormGroup>
-                <br />
-                <Label for="username">Username</Label>
-                <Input type="username" value={this.state.user} onChange={this.handleUser} placeholder="" />
-                <br />
-                <Label for="password">Password</Label>
-                <Input type="password" value={this.state.password} onChange={this.handlePass} placeholder="" />
-                <br />
-                </FormGroup>
-                <input type="submit" value="Submit"></input>
-              </Form>
-            </p>
-          </div>
+          <div>
+
+            <LoginNav
+              Profile={this.state.Profile}
+              info={this.props.info}
+              leader={this.props.leader}
+              signup={this.props.signup}
+              login={this.props.login}
+              profile={this.props.info}
+              />
+
+            <div className="outerLogin">
+              <p className="login">
+                <Form onSubmit={this.submit}>
+                  <h3 className="middle">Login</h3>
+                  <FormGroup>
+                  <br />
+                  <Label for="username">Username</Label>
+                  <Input type="username" value={this.state.user} onChange={this.handleUser} placeholder="" />
+                  <br />
+                  <Label for="password">Password</Label>
+                  <Input type="password" value={this.state.password} onChange={this.handlePass} placeholder="" />
+                  <br />
+                  </FormGroup>
+                  <Button type="submit" value="Submit">Submit</Button>
+                </Form>
+              </p>
+            </div>
+
+        </div>
       )
     }
 

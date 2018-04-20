@@ -10,6 +10,7 @@ import {
   Col
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import CarouselRotator from './CarouselRotator'
 
 export default class Info extends Component {
   constructor(props) {
@@ -56,16 +57,25 @@ export default class Info extends Component {
         <div className="info">
           <h2 className="middle">Requirements</h2>
           <p className="middle">
-            Gun Ho uses the newly released ARKit 1.5.
-            <br />
-            This means that you will have to have a
-            <br />
-            iPhone 6+ or better. It can also be played iPad
-            <br />
-            if you have an iPad Air 2 or better.
+            Requires iOS 11.3 or later.
             <br />
             <br />
-            <Button onClick={this.splash}>Back</Button>
+            Compatibile devices:
+            <br />
+            iPhone 6s / 6s Plus
+            <br />
+            iPhone 7 / 7 Plus
+            <br />
+            iPhone SE
+            <br />
+            iPhone 8 / 8 Plus
+            <br />
+            iPhone X
+            <br />
+            iPad Pro: 12.9-inch, 10.5-inch, 9.7-inch
+            <br />
+            iPad (2017)
+
           </p>
         </div>
       </div>
@@ -76,17 +86,24 @@ export default class Info extends Component {
     return(
       <div className="outer">
         <div className="info">
-          <h1 className="middle">Welcome</h1>
-          <p>
-            Gun Ho is an exciting Augmented Reality Tower Defense Game.
+          <h1 className="middle">Welcome{this.props.user}</h1>
+          <p className="middle">
+            <br />
+            Gun Ho is a Pirate themed Augmented Reality Tower Defense Game.
           </p>
           <Row>
             <Col>
+            <br />
+            <br />
+            <br />
               <p className="middle">
                 <Button onClick={this.requirements}>Requirements</Button>
               </p>
             </Col>
             <Col>
+              <br />
+              <br />
+              <br />
               <p className="middle">
                 <Button onClick={this.game}>How To Play</Button>
               </p>
@@ -100,13 +117,21 @@ export default class Info extends Component {
   renderGame() {
     return(
       <div className="outer">
-        <div className="info">
+        <div className="gameplay">
           <h2 className="middle">How To Play</h2>
-          <p className="middle">
+
+          <div className="middle">
+
+          <CarouselRotator />
 
             <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <Button onClick={this.splash}>Back</Button>
-          </p>
+          </div>
         </div>
       </div>
     )

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Leaderboard from './Leaderboard'
 import Info from './Info'
 import Navigation from './Nav'
+import ProfilePage from './ProfilePage'
 
 class LoggedPage extends Component {
 
@@ -83,16 +84,13 @@ class LoggedPage extends Component {
           logged={this.state.Profile}
           logout={this.props.info}
         />
+
+          <ProfilePage user={this.props.user} />
       </div>
-
-
     )
   }
 
   renderInfo() {
-
-    console.log(this.props.user);
-    console.log(this.state.Profile);
 
     return(
       <div>

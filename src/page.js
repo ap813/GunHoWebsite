@@ -10,8 +10,6 @@ import Navigation from './components/Nav'
 
 class Page extends Component {
 
-  static user = (prevState) =>(prevState.user)
-
   constructor(props) {
 
     super(props)
@@ -105,28 +103,16 @@ class Page extends Component {
     )
   }
 
-  renderProfile() {
-    return(
-      <div>
-        <Navigation
-          info={this.info}
-          leader={this.leader}
-          signup={this.signup}
-          login={this.login}
-          profile={this.info}
-          logged={this.state.Profile}
-        />
-      </div>
-
-
-    )
-  }
-
   renderLogin() {
 
     return(
       <div>
-          <LoginForm info={this.info}/>
+          <LoginForm info={this.info}
+          leader={this.leader}
+          signup={this.signup}
+          login={this.login}
+          profile={this.info}
+          logged={this.state.Profile} />
       </div>
     )
   }

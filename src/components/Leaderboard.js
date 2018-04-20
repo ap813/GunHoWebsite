@@ -29,6 +29,8 @@ export default class Leaderboard extends Component {
 
     var jsonObject = JSON.parse( xhr.responseText );
 
+    console.log(jsonObject);
+
     for(var i = 1; i <= jsonObject.length; i++)
     {
         var scr = jsonObject[i-1].score
